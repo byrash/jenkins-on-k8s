@@ -3,9 +3,12 @@ kind: Ingress
 metadata:
     name: jenkins-ingress
     namespace: jenkins
+    annotations:
+        spec.ingressClassName: traefik
 spec:
     rules:
-        - http:
+        -   host: jenkins.byrash.com
+            http:
               paths:
                   - path: /
                     pathType: Prefix

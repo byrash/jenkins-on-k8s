@@ -1,5 +1,5 @@
 ```
-k create ns jenkins && k apply -f sa.yaml -f pv.yaml -f deploy.yaml -f svc.yaml -f trafeik.yaml -f ingress.yaml
+k apply -f ns.yaml -f sa.yaml -f pv.yaml -f deploy.yaml -f svc.yaml -f trafeik.yaml -f ingress.yaml
 ```
 
 To get node IP
@@ -31,3 +31,5 @@ or
 ```
  k exec -n jenkins pods/<<PODNAME>> -- cat /var/jenkins_home/secrets/initialAdminPassword
 ```
+
+Please refer to: https://devopscube.com/jenkins-build-agents-kubernetes/ section "Jenkins Kubernetes Plugin Configuration"

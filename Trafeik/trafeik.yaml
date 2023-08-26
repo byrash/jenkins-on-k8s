@@ -67,13 +67,14 @@ spec:
                 app: traefik
         spec:
             serviceAccountName: traefik-account
-
             containers:
                 - name: traefik
                   image: traefik:v2.10
                   args:
                       - --api.insecure
                       - --providers.kubernetesingress
+                      - --entrypoints.web.address=:80
+                      - --log.level=INFO
                   ports:
                       - name: web
                         containerPort: 80
